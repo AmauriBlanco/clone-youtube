@@ -1,6 +1,6 @@
 import { ArrowLeft, Bell, Menu, Mic, Search, Upload, User } from "lucide-react";
 import logo from "../assets/logo.svg";
-import { Button } from "./Button";
+import { Button } from "../components/Button";
 import { useState } from "react";
 export function PageHeader() {
     const [showFullWidthSearch, setShowFullWidthSearch] = useState(false);
@@ -23,18 +23,18 @@ export function PageHeader() {
                     showFullWidthSearch ? "flex" : "hidden md:flex"
                 }`}
             >
-                {showFullWidthSearch &&(
+                {showFullWidthSearch && (
                     <Button
-                    onClick={() => setShowFullWidthSearch(false)}
-                    type="button"
-                    size="icon"
-                    variant="ghost"
-                    className="flex-shrink-0"
-                >
-                    <ArrowLeft />
-                </Button>
+                        onClick={() => setShowFullWidthSearch(false)}
+                        type="button"
+                        size="icon"
+                        variant="ghost"
+                        className="flex-shrink-0"
+                    >
+                        <ArrowLeft />
+                    </Button>
                 )}
-                
+
                 <div className="flex flex-grow max-w-[600px]">
                     <input
                         type="search"
