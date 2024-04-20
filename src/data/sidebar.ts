@@ -1,5 +1,10 @@
 export const subscriptions = [
     {
+        channelName: "TreinaWeb",
+        id: "treinaweb",
+        imgUrl: "https://yt3.ggpht.com/ytc/AIdro_kV93KGVRKctT1isVoOX-NxPAzPk9Tv31GK_yBwUVuvrrU=s48-c-k-c0x00ffffff-no-rj",
+    },
+    {
         channelName: "Fireship",
         id: "Fireship",
         imgUrl: "https://yt3.googleusercontent.com/ytc/APkrFKb--NH6RwAGHYsD3KfxX-SAgWgIHrjR5E4Jb5SDSQ=s176-c-k-c0x00ffffff-no-rj",
@@ -18,16 +23,6 @@ export const subscriptions = [
         channelName: "Kevin Powell",
         id: "KevinPowell",
         imgUrl: "https://yt3.ggpht.com/ytc/APkrFKa6XiLa13mMVPzkmmTBcgNPjjqCGPrY86KfJFmf5w=s48-c-k-c0x00ffffff-no-rj",
-    },
-    {
-        channelName: "Sonny Sangha",
-        id: "SonnySangha",
-        imgUrl: "https://yt3.ggpht.com/FjeN785fVWx0Pr6xCbwPhhq8hHj_gocc3FygDXYDEQgp2gE_FQzRNsFHFAjQ3oE-VJaeGR1a=s68-c-k-c0x00ffffff-no-rj",
-    },
-    {
-        channelName: "Traversy Media",
-        id: "TraversyMedia",
-        imgUrl: "https://yt3.googleusercontent.com/ytc/APkrFKYcYswt_UhD7D0j6ddiQz6Gb8Q_vSJOjhYI0CoXSw=s176-c-k-c0x00ffffff-no-rj-mo",
     },
 ];
 

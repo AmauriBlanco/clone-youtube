@@ -31,41 +31,52 @@ import { PageHeaderFirstSection } from "./PageHeader";
 export function Sidebar() {
     const { isLargeOpen, isSmallOpen, close } = useSidebarContext();
 
+    function maxWithShowSidebar() {
+        return window.innerWidth > 768;
+    }
+
     return (
         <>
-            <aside
-                className={`sticky top-0 overflow-y-auto scrollbar-hidden pb-4 flex flex-col ml-1
-            ${isLargeOpen ? "lg:hidden" : "lg:flex"}`}
-            >
-                <SmallSidebarItem Icon={Home} title="Home" url="/" />
-                <SmallSidebarItem Icon={Repeat} title="Shorts" url="/shorts" />
-                <SmallSidebarItem
-                    Icon={Clapperboard}
-                    title="Subscriptions"
-                    url="/subscriptions"
-                />
-                <SmallSidebarItem
-                    Icon={Library}
-                    title="Library"
-                    url="/library"
-                />
-            </aside>
+            {maxWithShowSidebar() && (
+                <aside
+                    className={`sticky top-0 overflow-y-auto scrollbar-hidden pb-4 flex flex-col ml-1 bg-[#0f0f0f] text-white ${
+                        isLargeOpen ? "lg:hidden" : "lg:flex"
+                    }`}
+                >
+                    <SmallSidebarItem Icon={Home} title="Home" url="/" />
+                    <SmallSidebarItem
+                        Icon={Repeat}
+                        title="Shorts"
+                        url="/shorts"
+                    />
+                    <SmallSidebarItem
+                        Icon={Clapperboard}
+                        title="Subscriptions"
+                        url="/subscriptions"
+                    />
+                    <SmallSidebarItem
+                        Icon={Library}
+                        title="Library"
+                        url="/library"
+                    />
+                </aside>
+            )}
             {isSmallOpen && (
                 <div
                     onClick={close}
-                    className="lg:hidden fixed inset-0 z-[999] bg-secondary-dark opacity-50"
+                    className="lg:hidden fixed inset-0 z-[999] bg-secondary-dark opacity-50 text-white"
                 />
             )}
             <aside
-                className={`w-56 lg:sticky absolute top-0 overflow-y-auto scrollbar-hidden pb-4 flex-col gap-2 px-2 ${
+                className={`w-56 lg:sticky absolute top-0 overflow-y-auto scrollbar-hidden pb-4 flex-col gap-2 px-2 bg-[#0f0f0f] ${
                     isLargeOpen ? "lg:flex" : "lg:hidden"
                 } ${
                     isSmallOpen
-                        ? "flex z-[999] bg-white max-h-screen"
+                        ? "flex z-[999] bg-[#0f0f0f] max-h-screen"
                         : "hidden"
                 }`}
             >
-                <div className="lg:hidden pt-2 pb-4 px-2 sticky top-0 bg-white">
+                <div className="lg:hidden pt-2 pb-4 px-2 sticky top-0 bg-[#0f0f0f]">
                     <PageHeaderFirstSection />
                 </div>
 
@@ -228,16 +239,16 @@ function LargeSidebarSection({
     const ButtonIcon = isExpanded ? ChevronUp : ChevronDown;
 
     return (
-        <div>
+        <div className="text-[#f1f1f1]">
             {title && <div className="ml-4 mt-2 text-lg mb-1">{title}</div>}
             {visibleChildren}
             {showExpandButton && (
                 <Button
                     onClick={() => setIsExpanded((e) => !e)}
                     variant="ghost"
-                    className="w-full flex items-center rounded-lg gap-4 p-3"
+                    className="w-full flex items-center rounded-lg gap-4 p-3 text-white hover:text-black"
                 >
-                    <ButtonIcon className="w-6 h-6" />
+                    <ButtonIcon className="w-6 h-6 " />
                     <div>{isExpanded ? "Show Less" : "Show More"}</div>
                 </Button>
             )}
@@ -263,9 +274,9 @@ function LargeSidebarItem({
             href={url}
             className={twMerge(
                 buttonStyles({ variant: "ghost" }),
-                `w-full flex items-center rounded-lg gap-4 p-3 ${
+                `w-full flex items-center rounded-lg gap-4 p-3 text-[#f1f1f1] hover:text-black ${
                     isActive
-                        ? "font-bold bg-neutral-100 hover:bg-secondary"
+                        ? "font-bold bg-[#272727] hover:bg-[#414141] hover:text-white" 
                         : undefined
                 }`
             )}

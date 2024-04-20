@@ -47,11 +47,15 @@ export function VideoGridItem({
 
     return (
         <div
-            className="flex flex-col gap-2"
+            className="flex flex-col gap-2 bg-[#0f0f0f]"
             onMouseEnter={() => setIsVideoPlaying(true)}
             onMouseLeave={() => setIsVideoPlaying(false)}
         >
-            <a href={`/watch?v=${id}`} className="relative aspect-video">
+            <a
+                href={`https://www.youtube.com/watch?v=${id}`}
+                className="relative aspect-video"
+                target="_blank"
+            >
                 <img
                     src={thumbnailUrl}
                     className={`block w-full h-full object-cover rounded-xl transition-[border-radius] duration-200 ${
@@ -59,7 +63,7 @@ export function VideoGridItem({
                     }`}
                     alt=""
                 />
-                <div className="absolute bottom-1 right-1 bg-secondary-dark text-secondary text-sm px-0.5 rounded">
+                <div className="absolute bottom-1 right-1 bg-secondary-dark text-white text-sm px-0.5 rounded">
                     {formatDuration(duration)}
                 </div>
                 <video
@@ -73,19 +77,27 @@ export function VideoGridItem({
                 />
             </a>
             <div className="flex gap-2">
-                <a href={`/@${channel.id}`} className="flex-shrink-0">
+                <a
+                    href={`https://www.youtube.com/@${channel.id}`}
+                    className="flex-shrink-0"
+                    target="_blank"
+                >
                     <img
                         className="w-12 h-12 rounded-full"
                         src={channel.profileUrl}
                     />
                 </a>
                 <div className="flex flex-col">
-                    <a href={`/watch?v=${id}`} className="font-bold">
+                    <a
+                        href={`/watch?v=${id}`}
+                        className="font-bold text-[#f1f1f1]"
+                    >
                         {title}
                     </a>
                     <a
-                        href={`/@${channel.id}`}
+                        href={`https://www.youtube.com/@${channel.id}`}
                         className="text-gray-400 text-sm"
+                        target="_blank"
                     >
                         {channel.name}
                     </a>

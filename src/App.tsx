@@ -12,12 +12,12 @@ function App() {
 
     return (
         <SidebarProvider>
-            <div className="max-h-screen flex flex-col">
+            <div className="max-h-screen flex flex-col bg-[#0f0f0f]">
                 <PageHeader />
                 <div className="grid grid-cols-[auto,1fr] flex-grow-1 overflow-auto">
                    <Sidebar/>
                     <div className="overflow-x-hidden px-8 pb-4">
-                        <div className="sticky top-0 bg-white z-10 pb-4">
+                        <div className="sticky top-0  z-10 pb-4 bg-[#0f0f0f]">
                             <CategoryPills
                                 categories={categories}
                                 selectedCategory={selectedCategory}

@@ -8,7 +8,7 @@ export function PageHeader() {
     const [showFullWidthSearch, setShowFullWidthSearch] = useState(false);
 
     return (
-        <header className="flex gap-10 lg:gap-20 justify-between pt-2 mb-6 mx-4">
+        <header className="flex gap-10 lg:gap-20 justify-between pt-2 mb-6 mx-4 bg-[#0f0f0f] text-[#f1f1f1]">
             <PageHeaderFirstSection hidden={showFullWidthSearch} />
             <form
                 className={` gap-4 flex-grow justify-center ${
@@ -31,7 +31,7 @@ export function PageHeader() {
                     <input
                         type="search"
                         placeholder="Search"
-                        className="rounded-l-full border-secondary-border shadow-inner shadow-secondary py-1 px-4 text-lg w-full focus:border-blue-500 outline-none"
+                        className="rounded-l-full shadow-inner border border-1 border-secondary-border border-r-0 shadow-secondary-dark-hover py-1 px-4 text-lg w-full focus:border-neutral-100 bg-[#0f0f0f]"
                     />
                     <Button className="py-2 px-4 rounded-r-full border-secondary-border border boder-l-0 flex-shrink-0">
                         <Search />
@@ -81,15 +81,15 @@ export function PageHeaderFirstSection({
     const { toggle } = useSidebarContext();
     return (
         <div
-            className={`gap-4 items-center flex-shrink-0 ${
+            className={`gap-4 items-center flex-shrink-0 text-white ${
                 hidden ? "hidden" : "flex"
             }`}
         >
-            <Button onClick={toggle} variant="ghost" size="icon">
+            <Button onClick={toggle} variant="default" size="icon">
                 <Menu />
             </Button>
-            <a href="/">
-                <img src={logo} className="h-6" />
+            <a href="https://youtube.com" target="_blank">
+                <img src={logo} className="h-6 text-white" />
             </a>
         </div>
     );

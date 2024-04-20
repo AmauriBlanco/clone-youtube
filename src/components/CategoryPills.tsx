@@ -38,9 +38,9 @@ export function CategoryPills({
     }, [categories, translate]);
 
     return (
-        <div ref={containerRef} className="overflow-hidden relative">
+        <div ref={containerRef} className="overflow-hidden relative bg-[#0f0f0f]">
             <div
-                className="flex whitespace-nowrap gap-3 transition-transform w-[max-content]"
+                className="flex whitespace-nowrap gap-3 transition-transform w-[max-content] text-white py-3 mt-[-10px]"
                 style={{ transform: `translateX(-${translate}px)` }}
             >
                 {categories.map((category) => (
@@ -57,7 +57,7 @@ export function CategoryPills({
                 ))}
             </div>
             {isLeftVisible && (
-                <div className="absolute left-0 top-1/2 -translate-y-1/2 bg-gradient-to-r from-white from-50% to-transparent w-24">
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 bg-gradient-to-r from-black from-50% to-transparent w-24 text-[#f1f1f1]">
                     <Button
                         variant="ghost"
                         size="icon"
@@ -77,7 +77,7 @@ export function CategoryPills({
             )}
 
             {isRightVisible && (
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 bg-gradient-to-l from-white from-50% to-transparent w-24 flex justify-end">
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 bg-gradient-to-l from-black from-50% to-transparent w-24 flex justify-end text-[#f1f1f1]">
                     <Button
                         variant="ghost"
                         size="icon"
