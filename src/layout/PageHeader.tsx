@@ -54,13 +54,13 @@ export function PageHeader() {
                 >
                     <Search />
                 </Button>
-                <Button variant="ghost" size="icon" className="md:hidden">
+                <Button variant="ghost" size="icon" className="hidden md:block">
                     <Mic />
                 </Button>
-                <Button variant="ghost" size="icon">
+                <Button variant="ghost" size="icon" className="hidden md:block">
                     <Upload />
                 </Button>
-                <Button variant="ghost" size="icon">
+                <Button variant="ghost" size="icon" className="hidden md:block">
                     <Bell />
                 </Button>
                 <Button variant="ghost" size="icon">
